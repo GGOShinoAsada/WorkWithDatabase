@@ -4,7 +4,8 @@ import com.company.sqlexecute.*;
 public class Main {
 
     public static void main(String[] args) throws ClassNotFoundException {
-	    SqlExecute.setDatabaseName("computerstore");
+	    SqlExecute.setDataBaseName("computerstore");
+	    SqlExecute.createConnectionString();
 	    SqlExecute.setUser("root");
 
 	    SqlExecute.setPassword("0000");

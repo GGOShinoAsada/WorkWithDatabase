@@ -7,6 +7,7 @@ public class SqlExecute {
     private static  String UserName = "";
     private static String  Password = "";
     private static String Query;
+    private static String ConnectionString;
     //system variable
     private  static  Connection connection;
     private  static Statement statement;
@@ -52,9 +53,12 @@ public class SqlExecute {
             //connection.close();
         }
     }
-    public static void setDatabaseName(String dbname){
-        DatabaseURL="jdbc:mysql://localhost/"+dbname+" ?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&useSSL=false";
+    public static void setDataBaseName(String dbname){
+        DatabaseURL=dbname;
 
+    }
+    public static void createConnectionString(){
+        ConnectionString =  "jdbc:mysql://localhost/"+DatabaseURL+" ?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&useSSL=false";
     }
     public static boolean getConnectionStatus() throws ClassNotFoundException {
         boolean con_succ=true;
