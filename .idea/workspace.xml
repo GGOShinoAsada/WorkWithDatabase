@@ -1,10 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c9bc8681-41d4-4b69-8958-c79d7977bf8d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="c9bc8681-41d4-4b69-8958-c79d7977bf8d" name="Default Changelist" comment="change organization SqlExecute class">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_8_0_21.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8a2432d9-6945-42b2-a31d-a50f9e015705.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/8a2432d9-6945-42b2-a31d-a50f9e015705.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/mssql_jdbc_8_4_1_jre11.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/mysql_mysql_connector_java_5_1_26.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/mysql_mysql_connector_java_5_1_40.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WorkWithDataBase.iml" beforeDir="false" afterPath="$PROJECT_DIR$/WorkWithDataBase.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/buid/WorkWithDataBase-1.0-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/mysql-connector-java-5.1.26-sources.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/mysql-connector-java-5.1.26.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/WorkWithDataBase/com/company/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/WorkWithDataBase/com/company/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/WorkWithDataBase/com/company/sqlexecute/SQLQuery.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/WorkWithDataBase/com/company/sqlexecute/SQLQuery.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/WorkWithDataBase/com/company/sqlexecute/SqlExecute.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/WorkWithDataBase/com/company/sqlexecute/SqlExecute.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/sqlexecute/SQLQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/sqlexecute/SQLQuery.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/sqlexecute/SqlExecute.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/sqlexecute/SqlExecute.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -50,17 +62,25 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="GGOShinoAsada &lt;mstr.calling@gmail.com&gt;" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="1" />
   </component>
   <component name="ProjectId" id="1iokwIR5JYIetzVjBG78I9yhXyB" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="Downloaded.Files.Path.Enabled" value="true" />
@@ -70,7 +90,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$MAVEN_REPOSITORY$/mysql/mysql-connector-java/5.1.40" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/РАБОТА/mysql-connector-java-8.0.21/mysql-connector-java-8.0.21.jar!/" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -142,8 +162,17 @@
       <option name="presentableId" value="Default" />
       <updated>1602581568376</updated>
       <workItem from="1602581578533" duration="4461000" />
-      <workItem from="1602587236762" duration="14184000" />
+      <workItem from="1602587236762" duration="21404000" />
+      <workItem from="1602698986970" duration="3175000" />
     </task>
+    <task id="LOCAL-00001" summary="change organization SqlExecute class">
+      <created>1602607868683</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1602607868683</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -152,23 +181,48 @@
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
+        <entry key="1">
+          <value>
+            <State>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="roots">
+                    <value>
+                      <list>
+                        <option value="$PROJECT_DIR$" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
+    <option name="OPEN_TABS">
+      <set>
+        <option value="1" />
+      </set>
+    </option>
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/company/Main.java</url>
-          <line>12</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="change organization SqlExecute class" />
+    <option name="LAST_COMMIT_MESSAGE" value="change organization SqlExecute class" />
   </component>
 </project>
