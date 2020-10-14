@@ -60,8 +60,8 @@ public class SqlExecute {
 
     }
     public static void createConnectionString(){
-       // ConnectionString =  "jdbc:mysql://localhost:3306/"+DatabaseURL+"?useSSL=false&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
-        ConnectionString  = "jdbc:mysql://localhost:3306/computerstore";
+        ConnectionString =  "jdbc:mysql://localhost:3306/"+DatabaseName+"?useSSL=false&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
+        //ConnectionString  = "jdbc:mysql://localhost:3306/computerstore";
     }
     public static boolean getConnectionStatus() throws ClassNotFoundException {
         boolean con_succ=true;
@@ -70,8 +70,8 @@ public class SqlExecute {
         info.put("user",getUser());
         info.put("password",getPassword());
         try{
-            Class.forName("com.mysql.jdbc.Driver");
-            connection = DriverManager.getConnection(DatabaseName,info);
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            connection = DriverManager.getConnection(ConnectionString,info);
             System.out.println("Connection successful!");
         }
         catch (SQLException ex){

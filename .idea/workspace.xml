@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="c9bc8681-41d4-4b69-8958-c79d7977bf8d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/WorkWithDataBase/com/company/sqlexecute/SqlExecute.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/WorkWithDataBase/com/company/sqlexecute/SqlExecute.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/sqlexecute/SqlExecute.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/sqlexecute/SqlExecute.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -58,6 +60,7 @@
       </list>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="1" />
@@ -148,7 +151,7 @@
       <updated>1602581568376</updated>
       <workItem from="1602581578533" duration="4461000" />
       <workItem from="1602587236762" duration="21404000" />
-      <workItem from="1602698986970" duration="3789000" />
+      <workItem from="1602698986970" duration="4593000" />
     </task>
     <task id="LOCAL-00001" summary="change organization SqlExecute class">
       <created>1602607868683</created>
@@ -171,7 +174,14 @@
       <option name="project" value="LOCAL" />
       <updated>1602702428468</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="change organization SqlExecute class">
+      <created>1602702970659</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1602702970659</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
