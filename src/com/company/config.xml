@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <jdbc>
+        <url>jdbc:mysql://localhost:3306/computerstore</url>
+		<connectionproperties>"useSSL=false&amp;useUnicode=true&amp;useJDBCCompliantTimezoneShift=true&amp;useLegacyDatetimeCode=false&amp;serverTimezone=UTC;"</connectionproperties>
+        <driver>com.mysql.jdbc.Driver</driver>
+        <username>root</username>
+        <password>0000</password>
+    </jdbc>
+</config>

@@ -2,9 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c9bc8681-41d4-4b69-8958-c79d7977bf8d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8a2432d9-6945-42b2-a31d-a50f9e015705.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/8a2432d9-6945-42b2-a31d-a50f9e015705.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/WorkWithDataBase/com/company/sqlexecute/SqlExecute.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/WorkWithDataBase/com/company/sqlexecute/SqlExecute.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WorkWithDataBase.iml" beforeDir="false" afterPath="$PROJECT_DIR$/WorkWithDataBase.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/WorkWithDataBase/com/company/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/WorkWithDataBase/com/company/sqlexecute/SQLQuery.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/WorkWithDataBase/com/company/sqlexecute/SqlExecute.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/sqlexecute/GraphInterfase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/sqlexecute/GraphInterfase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/sqlexecute/SQLQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/sqlexecute/SQLQuery.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/sqlexecute/SqlExecute.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/sqlexecute/SqlExecute.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/WorkWithDataBase-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/WorkWithDataBase-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/POM.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -45,11 +57,14 @@
     </expand>
     <select />
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="WorkWithDataBase" />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -90,6 +105,15 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\roman\IdeaProjects\WorkWithDataBase\src\com\company" />
+      <recent name="C:\Users\roman\IdeaProjects\WorkWithDataBase\src" />
+      <recent name="C:\Users\roman\IdeaProjects\WorkWithDataBase\.idea" />
+      <recent name="C:\Users\roman\IdeaProjects\WorkWithDataBase\.idea\libraries" />
+      <recent name="C:\Users\roman\IdeaProjects\WorkWithDataBase" />
+    </key>
+  </component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -122,16 +146,17 @@
   <component name="ServiceViewManager">
     <option name="allServicesViewState">
       <serviceView>
+        <option name="contentProportion" value="0.22347267" />
         <treeState>
           <expand>
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@ee1d9bcc" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@1b546e4c" type="7427dc5b:ServiceModel$ServiceGroupNode" />
             </path>
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@ee1d9bcc" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@640d0d5e" type="9fbbdea:ServiceModel$ServiceNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@1b546e4c" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@69a9dd9f" type="9fbbdea:ServiceModel$ServiceNode" />
             </path>
           </expand>
           <select />
@@ -151,7 +176,9 @@
       <updated>1602581568376</updated>
       <workItem from="1602581578533" duration="4461000" />
       <workItem from="1602587236762" duration="21404000" />
-      <workItem from="1602698986970" duration="4593000" />
+      <workItem from="1602698986970" duration="10430000" />
+      <workItem from="1602773756221" duration="9223000" />
+      <workItem from="1603024580590" duration="22954000" />
     </task>
     <task id="LOCAL-00001" summary="change organization SqlExecute class">
       <created>1602607868683</created>
@@ -181,7 +208,14 @@
       <option name="project" value="LOCAL" />
       <updated>1602702970659</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="update class SQLExecute. Connection are successful">
+      <created>1602703778719</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1602703778719</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -232,6 +266,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="change organization SqlExecute class" />
-    <option name="LAST_COMMIT_MESSAGE" value="change organization SqlExecute class" />
+    <MESSAGE value="update class SQLExecute. Connection are successful" />
+    <option name="LAST_COMMIT_MESSAGE" value="update class SQLExecute. Connection are successful" />
   </component>
 </project>
