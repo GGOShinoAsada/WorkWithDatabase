@@ -48,6 +48,7 @@ public class GraphInterfase {
     private static boolean status;
     private static boolean flag_st;
     private static boolean flag_tmp;
+    private static String status_string;
     private static void getinterface(int index){
         System.out.println("Please select option:");
         System.out.println("A: adding new item");
@@ -57,7 +58,7 @@ public class GraphInterfase {
         System.out.println("Q: quit");
         String t = scanner.next();
         //t - type, index - number operation
-        String status_string="";
+
         switch (index){
             case 1:
                 String cname="";String desc="";String adress="";String newcname="";
@@ -110,11 +111,14 @@ public class GraphInterfase {
                             System.out.println("Please input description. This field is no mandatory");
                             desc=scanner.next();
                             System.out.println("Please input company rating: ");
+                            while (flag_st){
+                                flag_st=printStatusMenu();
+                            }
                             rath = Double.parseDouble(scanner.next());
                             if (!((cname=="")&&(adress=="")&&(desc=="")&&(rath<0)))
                                 flag_tmp=false;
                         }
-                        if (SqlExecute.updatesupplercompany(cname,newcname,adress,desc,rath))
+                        if (SqlExecute.updatesupplercompany(cname,newcname,adress,desc,rath,status))
                             System.out.println("Updating successful");
                         else
                             System.out.println("Updating failed");
@@ -183,10 +187,7 @@ public class GraphInterfase {
                             System.out.println("Please input new description");
                             desc=scanner.next();
                             while (flag_st)
-                                System.out.println("Please select status: 1-true; 0-false: ");
-                                status_string=scanner.next();
-                                if ((status_string.equals("1"))||(status_string.equals("0")))
-                                    flag_st=false;
+                               flag_st=printStatusMenu();
                             }
                             if (!((dmetod=="")&&(newdmetod=="")&&(desc=="")))
                             {
@@ -194,9 +195,15 @@ public class GraphInterfase {
                                 flag_tmp=false;
                             }
                         }
-
+                        if (SqlExecute.updateDeliveryMethod(dmetod,newdmetod,desc,status))
+                            System.out.println("Updating success");
+                        else
+                            System.out.println("Updating failed");
                         break;
                     case "S":
+                        break;
+                    case "Q":
+                        System.out.println("Good luck");
                         break;
                 }
 
@@ -253,5 +260,12 @@ public class GraphInterfase {
         status=true;
         flag_st=true;
         flag_tmp=true;
+    }
+    private static boolean printStatusMenu(){
+        System.out.println("Please select status: 1-true; 0-false: ");
+        status_string=scanner.next();
+        if ((status_string.equals("1"))||(status_string.equals("0")))
+            flag_st=false;
+        return flag_st;
     }
 }

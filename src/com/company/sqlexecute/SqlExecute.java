@@ -253,7 +253,7 @@ public class SqlExecute {
         }
         return rez;
     }
-    public static boolean updatesupplercompany(String oldCname, String newcname, String adr, String desc, double rath)
+    public static boolean updatesupplercompany(String oldCname, String newcname, String adr, String desc, double rath,boolean stat)
     {
         boolean rez = true;
         int id_t = -1;
@@ -268,12 +268,13 @@ public class SqlExecute {
             }
             result.close();
             if (id_t>0){
-                query="update supplercompanies set CompanyName=?, Description=?, Adress=?,Rathing=?";
+                query="update supplercompanies set CompanyName=?, Description=?, Adress=?,Rathing=?, Status=?";
                 dynamicStatement=connection.prepareStatement(query);
                 dynamicStatement.setString(1,newcname);
                 dynamicStatement.setString(2,desc);
                 dynamicStatement.setString(3,adr);
                 dynamicStatement.setDouble(4,rath);
+                dynamicStatement.setBoolean(5,stat);
                 rez=(dynamicStatement.executeUpdate()>0)?true:false;
             }
             else {

@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c9bc8681-41d4-4b69-8958-c79d7977bf8d" name="Default Changelist" comment="Fix work with xml file. Realization functional in class SQLQuery">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/sqlexecute/GraphInterfase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/sqlexecute/GraphInterfase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/sqlexecute/SqlExecute.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/sqlexecute/SqlExecute.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -168,7 +166,7 @@
       <workItem from="1602698986970" duration="10430000" />
       <workItem from="1602773756221" duration="9223000" />
       <workItem from="1603024580590" duration="29562000" />
-      <workItem from="1603057930786" duration="4495000" />
+      <workItem from="1603057930786" duration="9770000" />
     </task>
     <task id="LOCAL-00001" summary="change organization SqlExecute class">
       <created>1602607868683</created>
