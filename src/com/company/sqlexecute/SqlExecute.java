@@ -233,7 +233,7 @@ public class SqlExecute {
         boolean rez=true;
         try{
             connection = DriverManager.getConnection(connectionString, userName, password);
-            query="delete from supplercompanies where companyname=%s";
+            query="update computerstore.supplercompanies set Status=false where companyname=%s";
             query=String.format(query,cname);
             staticStatement = connection.createStatement();
             rez = (staticStatement.executeUpdate(query)>0)?true:false;
@@ -251,6 +251,195 @@ public class SqlExecute {
                 System.out.println(ex1.getMessage());
             }
         }
+        return rez;
+    }
+    public static boolean updatesupplercompany(String oldCname, String newcname, String adr, String desc, double rath)
+    {
+        boolean rez = true;
+        int id_t = -1;
+        try {
+            connection=DriverManager.getConnection(connectionString, userName, password);
+            query = "select id from supplercompanies where companyname=%s";
+            query=String.format(query,oldCname);
+            staticStatement=connection.createStatement();
+            result=staticStatement.executeQuery(query);
+            while (result.next()){
+                id_t=result.getInt(1);
+            }
+            result.close();
+            if (id_t>0){
+                query="update supplercompanies set CompanyName=?, Description=?, Adress=?,Rathing=?";
+                dynamicStatement=connection.prepareStatement(query);
+                dynamicStatement.setString(1,newcname);
+                dynamicStatement.setString(2,desc);
+                dynamicStatement.setString(3,adr);
+                dynamicStatement.setDouble(4,rath);
+                rez=(dynamicStatement.executeUpdate()>0)?true:false;
+            }
+            else {
+                System.out.println("SupplerCompany not found. Please check correction input values");
+                rez=false;
+            }
+        }
+        catch (SQLException ex){
+            rez =false;
+            System.out.println(ex.getMessage());
+        }
+        finally {
+            try{
+                connection.close();
+                staticStatement.close();
+                result.close();
+            }
+            catch (SQLException ex1){
+               System.out.println(ex1.getMessage());
+            }
+        }
+        return  rez;
+    }
+    public static boolean selectSupplerCompany(String cname){
+        boolean rez=true;
+        try{
+            connection=DriverManager.getConnection(connectionString,userName,password);
+            query="select * from supplercompanies where companyname=%s";
+            query=String.format(query,cname);
+            staticStatement=connection.createStatement();
+            result = staticStatement.executeQuery(query);
+            while (result.next()){
+                System.out.println("Company name: "+result.getString(2));
+                System.out.println("Company adress"+result.getString(3));
+                System.out.println("Description "+result.getString(4));
+                System.out.println("Rathing: "+result.getDouble(5));
+                System.out.println("Status "+result.getBoolean(6));
+            }
+        }
+        catch (SQLException ex) {
+            rez=false;
+            System.out.println(ex.getMessage());
+        }
+        finally {
+            try{
+
+                connection.close();
+                staticStatement.close();
+                result.close();
+            }
+            catch (SQLException ex1){
+                System.out.println(ex1.getMessage());
+            }
+        }
+        return rez;
+    }
+    //--------------------------------------------------------//
+    //---------------------DELIVERYMETHODS--------------------//
+    //--------------------------------------------------------//
+    public static boolean addDeliveryMethod(String dnaame, String desc){
+        boolean rez=true;
+        try{
+            connection=DriverManager.getConnection(connectionString,userName,password);
+            query="insert into deliverymethods (deliverymethod, description) values (%s, %s)";
+            query=String.format(query,dnaame,desc);
+            staticStatement=connection.createStatement();
+            rez=(staticStatement.executeUpdate(query)>0)?true:false;
+        }
+        catch (SQLException ex){
+            rez=false;
+            System.out.println(ex.getMessage());
+        }
+        finally {
+            try{
+                connection.close();
+                staticStatement.close();
+
+            }
+            catch (SQLException ex1){
+                System.out.println(ex1.getMessage());
+            }
+        }
+        return rez;
+    }
+    public  static  boolean removedeliverymethod(String dname){
+        boolean rez=true;
+        int id_t=-1;
+        try {
+            connection=DriverManager.getConnection(connectionString,userName,password);
+            query="select id from deliverymethods where deliverymethod=%s";
+            query=String.format(query,dname);
+            staticStatement=connection.createStatement();
+            result=staticStatement.executeQuery(query);
+            while (result.next()){
+                id_t=result.getInt(1);
+            }
+
+            if (id_t>0){
+                query="update deliverymethods set Status=false where id=?";
+                dynamicStatement = connection.prepareStatement(query);
+                dynamicStatement.setInt(1,id_t);
+                rez=((dynamicStatement.executeUpdate())>0)?true:false;
+            }
+            else{
+                System.out.println("Delivery method not found. Please try again");
+                rez=false;
+            }
+        }
+        catch (SQLException ex){
+            System.out.println(ex.getMessage());
+            rez=false;
+        }
+        finally {
+            try{
+                connection.close();
+                staticStatement.close();
+                dynamicStatement.close();
+            }
+            catch (SQLException ex1){
+                System.out.println(ex1.getMessage());
+            }
+        }
+        return rez;
+    }
+    public static boolean updateDeliveryMethod(String olddname, String newdnname, String desc, boolean stat){
+        boolean rez=true;
+        int id_t=-1;
+        try{
+            connection=DriverManager.getConnection(connectionString,userName,password);
+            query="select id from deliverymethods where deliverymethod=%s";
+            query=String.format(query,olddname);
+            staticStatement=connection.createStatement();
+            result=staticStatement.executeQuery(query);
+            while (result.next()){
+                id_t=result.getInt(1);
+            }
+            if (id_t>0){
+                query = "update deliverymethods set DeliveryMethod=?, Description=?, Status=?";
+                dynamicStatement=connection.prepareStatement(query);
+                dynamicStatement.setString(1,newdnname);
+                dynamicStatement.setString(2,desc);
+                dynamicStatement.setBoolean(3,stat);
+                rez=((dynamicStatement.executeUpdate()>0))?true:false;
+            }
+            else {
+                System.out.println("Delivery method not found. Please check correction input values");
+                rez=false;
+            }
+
+        }
+        catch (SQLException ex){
+           rez=false;
+           System.out.println(ex.getMessage());
+        }
+        finally {
+            try{
+                connection.close();
+                staticStatement.close();
+                dynamicStatement.close();
+                result.close();
+            }
+            catch (SQLException ex1){
+                System.out.println(ex1.getMessage());
+            }
+        }
+
         return rez;
     }
 }

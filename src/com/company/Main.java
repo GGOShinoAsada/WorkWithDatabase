@@ -7,7 +7,8 @@ public class Main {
     	boolean status = true;
     	//SQLQuery.init();
     	//SQLQuery.printvales();
-    	boolean isexit = false;
+        GraphInterfase.genemu();
+    	//boolean isexit = false;
     	//while (!isexit) do{
     	//	isexit=GraphInterfase.genemu();
 	//	}

@@ -45,21 +45,24 @@ public class GraphInterfase {
 
 
     }
-
-    public static void getinterface(int index){
+    private static boolean status;
+    private static boolean flag_st;
+    private static boolean flag_tmp;
+    private static void getinterface(int index){
         System.out.println("Please select option:");
-        System.out.println("A: adding new product");
-        System.out.println("R: removing exists product");
-        System.out.println("U: updating exists product");
-        System.out.println("S: select parameters");
+        System.out.println("A: adding new item");
+        System.out.println("R: removing exists item");
+        System.out.println("U: updating exists item");
+        System.out.println("S: select exists item(s)");
         System.out.println("Q: quit");
         String t = scanner.next();
         //t - type, index - number operation
+        String status_string="";
         switch (index){
             case 1:
-                String cname="";String desc="";String adress="";
-                double rath=0.0;
-                boolean flag_tmp = true;
+                String cname="";String desc="";String adress="";String newcname="";
+                double rath=-1.0;
+                rewrite();
                 switch (t){
                     case "A":
                         while (flag_tmp){
@@ -68,11 +71,11 @@ public class GraphInterfase {
                             cname = scanner.next();
                             System.out.println("Please input adress company: ");
                             adress=scanner.next();
-                            System.out.println("Please input company rathing: ");
+                            System.out.println("Please input company rating: ");
                             rath=scanner.nextDouble();
                             System.out.println("Please input description company. This field is no mandatory");
                             desc = scanner.next();
-                            if (!((cname=="")||(adress!="")))
+                            if (!((cname=="")&&(adress=="")&&(desc=="")&&(rath<0)))
                                 flag_tmp=false;
                         }
                         if (SqlExecute.addsupplercompany(cname,adress,desc,rath)){
@@ -96,19 +99,102 @@ public class GraphInterfase {
                             System.out.println("Removing failed");
                         break;
                     case "U":
-
+                        while (flag_tmp){
+                            System.out.println("Updating SupplerCompany");
+                            System.out.println("Please input company name, which you need to update:");
+                            cname=scanner.next();
+                            System.out.println("Please input new company name: ");
+                            newcname=scanner.next();
+                            System.out.println("Please input company address:");
+                            adress=scanner.next();
+                            System.out.println("Please input description. This field is no mandatory");
+                            desc=scanner.next();
+                            System.out.println("Please input company rating: ");
+                            rath = Double.parseDouble(scanner.next());
+                            if (!((cname=="")&&(adress=="")&&(desc=="")&&(rath<0)))
+                                flag_tmp=false;
+                        }
+                        if (SqlExecute.updatesupplercompany(cname,newcname,adress,desc,rath))
+                            System.out.println("Updating successful");
+                        else
+                            System.out.println("Updating failed");
                         break;
                     case "S":
+                        while (flag_tmp){
+                            System.out.println("Selecting SupplerCompany");
+                            System.out.println("Please input CompanyName for search: ");
+                            cname=scanner.next();
+                            if (cname!=""){
+                                flag_tmp=false;
+                            }
+                        }
+                        if (SqlExecute.selectSupplerCompany(cname))
+                            System.out.println("Selecting success");
+                        else
+                            System.out.println("Selecting failed");
+                        break;
+                    case "Q":
+                        System.out.println("Good luck");
                         break;
                 }
                 break;
             case 2:
+                rewrite();
+                String dmetod="";  desc=""; String newdmetod="";
+                flag_tmp=true;
                 switch (t){
                     case "A":
+
+                        while (flag_tmp){
+                            System.out.println("Adding delivery method");
+                            System.out.println("Please input delivery method");
+                            dmetod=scanner.next();
+                            System.out.println("Please input description");
+                            desc=scanner.next();
+                            if ((dmetod!="")&&(desc!=""))
+                                flag_tmp=false;
+                        }
+                        if (SqlExecute.addDeliveryMethod(dmetod,desc))
+                            System.out.println("Adding success");
+                        else
+                            System.out.println("Adding failed");
                         break;
                     case "R":
+                        while (flag_tmp){
+                            System.out.println("Removing delivery method");
+                            System.out.println("Please input delivery method: ");
+                            dmetod=scanner.next();
+                            if (dmetod!="")
+                                flag_tmp=false;
+                        }
+                        if (SqlExecute.removedeliverymethod(dmetod))
+                            System.out.println("Removing success");
+                        else
+                            System.out.println("Removing failed");
                         break;
                     case "U":
+                        {
+                        while (flag_tmp){
+                            System.out.println("Updating delivery method");
+                            System.out.println("Please input delivery method for search: ");
+                            dmetod=scanner.next();
+                            System.out.println("Please input new delivery method");
+                            newdmetod=scanner.next();
+                            System.out.println("Please input new description");
+                            desc=scanner.next();
+                            while (flag_st)
+                                System.out.println("Please select status: 1-true; 0-false: ");
+                                status_string=scanner.next();
+                                if ((status_string.equals("1"))||(status_string.equals("0")))
+                                    flag_st=false;
+                            }
+                            if (!((dmetod=="")&&(newdmetod=="")&&(desc=="")))
+                            {
+                                status=(status_string=="1")?true:false;
+                                flag_tmp=false;
+                            }
+                        }
+
                         break;
                     case "S":
                         break;
@@ -159,9 +245,13 @@ public class GraphInterfase {
             case 7:
                 break;
         }
-
     }
-    public static void executesupplercompanies(){
 
+
+
+    public static void rewrite(){
+        status=true;
+        flag_st=true;
+        flag_tmp=true;
     }
 }

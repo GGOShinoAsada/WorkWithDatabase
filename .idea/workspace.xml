@@ -1,22 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c9bc8681-41d4-4b69-8958-c79d7977bf8d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8a2432d9-6945-42b2-a31d-a50f9e015705.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/8a2432d9-6945-42b2-a31d-a50f9e015705.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="c9bc8681-41d4-4b69-8958-c79d7977bf8d" name="Default Changelist" comment="Fix work with xml file. Realization functional in class SQLQuery">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WorkWithDataBase.iml" beforeDir="false" afterPath="$PROJECT_DIR$/WorkWithDataBase.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/WorkWithDataBase/com/company/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/WorkWithDataBase/com/company/sqlexecute/SQLQuery.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/WorkWithDataBase/com/company/sqlexecute/SqlExecute.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/sqlexecute/GraphInterfase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/sqlexecute/GraphInterfase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/sqlexecute/SQLQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/sqlexecute/SQLQuery.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/sqlexecute/SqlExecute.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/sqlexecute/SqlExecute.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/WorkWithDataBase-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/WorkWithDataBase-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/POM.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -178,7 +167,8 @@
       <workItem from="1602587236762" duration="21404000" />
       <workItem from="1602698986970" duration="10430000" />
       <workItem from="1602773756221" duration="9223000" />
-      <workItem from="1603024580590" duration="22954000" />
+      <workItem from="1603024580590" duration="29562000" />
+      <workItem from="1603057930786" duration="4495000" />
     </task>
     <task id="LOCAL-00001" summary="change organization SqlExecute class">
       <created>1602607868683</created>
@@ -220,6 +210,17 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="SHOW_OTHER_BRANCHES" value="true" />
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -267,6 +268,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="change organization SqlExecute class" />
     <MESSAGE value="update class SQLExecute. Connection are successful" />
-    <option name="LAST_COMMIT_MESSAGE" value="update class SQLExecute. Connection are successful" />
+    <MESSAGE value="Fix work with xml file. Realization functional in class SQLQuery" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix work with xml file. Realization functional in class SQLQuery" />
   </component>
 </project>
