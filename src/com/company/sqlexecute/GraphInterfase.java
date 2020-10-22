@@ -2,6 +2,8 @@ package com.company.sqlexecute;
 
 
 
+import javax.swing.plaf.synth.SynthEditorPaneUI;
+import java.lang.ref.SoftReference;
 import java.util.Scanner;
 
 public class GraphInterfase {
@@ -201,12 +203,15 @@ public class GraphInterfase {
                             System.out.println("Updating failed");
                         break;
                     case "S":
-                        System.out.println("Select method");
-                        System.out.println("Please input DeliveryMethod for searching: ");
-                        dmetod=scanner.next();
-                        if (dmetod==""){
-                            flag_tmp=false;
+                        while (flag_tmp){
+                            System.out.println("Select method");
+                            System.out.println("Please input DeliveryMethod for searching: ");
+                            dmetod=scanner.next();
+                            if (dmetod==""){
+                                flag_tmp=false;
+                            }
                         }
+
                         if (SqlExecute.selectDeliveryMethod(dmetod)){
                             System.out.println("Selecting success");
                         }
@@ -221,10 +226,30 @@ public class GraphInterfase {
 
                 break;
             case 3:
+                rewrite();
+                String emppos=""; String fname=""; String sname=""; String mname=""; String phnumber="";
                 switch (t){
                     case "A":
+                        while (flag_tmp){
+                            System.out.println("Adding Employee");
+                            System.out.println("Please input employee position: ");
+                            emppos=scanner.next();
+                            System.out.println("Please input employees first name");
+                            fname=scanner.next();
+                            System.out.println("Please input employees second name: ");
+                            sname=scanner.next();
+                            System.out.println("Please input employees middle name");
+                            mname=scanner.next();
+                            System.out.println("Please input employee adress: ");
+                            adress=scanner.next();
+                            System.out.println("Please input phone number: ");
+                            phnumber= scanner.next();
+                            if ((emppos=="")&&(fname=="")&&(sname=="")&&(mname=="")&&(adress=="")&&(phnumber=="")){
+                                flag_tmp=false;
+                            }
+                        }
 
-                        //SqlExecute.addPosition();
+
                         break;
                     case "R":
                         break;

@@ -77,6 +77,7 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -157,7 +158,8 @@
       <workItem from="1602773756221" duration="9223000" />
       <workItem from="1603024580590" duration="29562000" />
       <workItem from="1603057930786" duration="11086000" />
-      <workItem from="1603358014337" duration="1293000" />
+      <workItem from="1603358014337" duration="2036000" />
+      <workItem from="1603362619532" duration="3745000" />
     </task>
     <task id="LOCAL-00001" summary="change organization SqlExecute class">
       <created>1602607868683</created>

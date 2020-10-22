@@ -479,4 +479,54 @@ public class SqlExecute {
 
         return rez;
     }
+    /*----------------------------------------------------------*/
+    /*-----------------COMPANY EMPLOYEES-------------------------*/
+    /*-----------------------------------------------------------*/
+    public  static boolean addnewemployee(String empposition, String fname, String sname, String mname, String adress, String pnumber){
+        boolean rez=true;
+        String empciper="";
+
+        int id_t=-1;
+        int count_reg=0;
+        try{
+            connection=DriverManager.getConnection(connectionString, userName, password);
+            query="select id from positions where position=?";
+            dynamicStatement.setString(1,empposition);
+
+            if (dynamicStatement.executeUpdate(query)>0){
+                result=dynamicStatement.executeQuery(query);
+                while (!result.next()){
+                    id_t=result.getInt(1);
+                }
+                dynamicStatement.close();
+                result.close();
+                query="select count(*)+1 from employees where position=? and substring_index(cipher,'/',-1)=curdate()";
+                result=dynamicStatement.executeQuery(query);
+                while (!result.next()){
+                   count_reg=result.getInt(1);
+                }
+               dynamicStatement.close();
+                result.close();
+                if (count_reg>0){
+                    query="insert into employees (employeecipher, position , firstname, secondname, middlename, adress) values ()"
+                }
+                else {
+
+                }
+                query="select concat(curdate(),'/',(select count (*)+1 from employees where position=? and substring_index(cipher,'/',-1)=curdate()) ))"
+            }
+            else {
+                System.out.println("Position not found. Please try again");
+            }
+            result.close();
+
+            if (id_t>0){
+                query="insert into employees (emp)"
+            }
+        }
+        catch (SQLException ex){
+
+        }
+        return rez;
+    }
 }
