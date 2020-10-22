@@ -201,6 +201,18 @@ public class GraphInterfase {
                             System.out.println("Updating failed");
                         break;
                     case "S":
+                        System.out.println("Select method");
+                        System.out.println("Please input DeliveryMethod for searching: ");
+                        dmetod=scanner.next();
+                        if (dmetod==""){
+                            flag_tmp=false;
+                        }
+                        if (SqlExecute.selectDeliveryMethod(dmetod)){
+                            System.out.println("Selecting success");
+                        }
+                        else {
+                            System.out.println("Selecting failed");
+                        }
                         break;
                     case "Q":
                         System.out.println("Good luck");

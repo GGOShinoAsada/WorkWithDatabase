@@ -443,4 +443,40 @@ public class SqlExecute {
 
         return rez;
     }
+    public static boolean selectDeliveryMethod(String dmname){
+        boolean rez=true;
+        try{
+            connection = DriverManager.getConnection(connectionString,userName, password);
+            query="select * from deliverymethods where deliverymethod=%s";
+            query=String.format(query,dmname);
+            staticStatement=connection.createStatement();
+            result=staticStatement.executeQuery(query);
+            rez=(result.getConcurrency()>0)?true:false;
+            if (rez){
+                while (!result.next()){
+                    System.out.println("DeliveryMethod name: "+ result.getString(2));
+                    System.out.println("Description: "+result.getString(3));
+                    System.out.println("Status: "+result.getDouble(4));
+                }
+            }
+            else {
+                System.out.println("No element searching");
+            }
+
+        }
+        catch (SQLException ex){
+            try{
+                rez=false;
+                result.close();
+                staticStatement.close();
+                connection.close();
+            }
+            catch (SQLException ex1){
+                System.out.println(ex1.getMessage());
+            }
+        }
+
+
+        return rez;
+    }
 }
