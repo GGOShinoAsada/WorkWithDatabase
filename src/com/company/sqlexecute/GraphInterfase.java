@@ -160,6 +160,7 @@ public class GraphInterfase {
                             if ((dmetod!="")&&(desc!=""))
                                 flag_tmp=false;
                         }
+
                         if (SqlExecute.addDeliveryMethod(dmetod,desc))
                             System.out.println("Adding success");
                         else
@@ -227,7 +228,7 @@ public class GraphInterfase {
                 break;
             case 3:
                 rewrite();
-                String emppos=""; String fname=""; String sname=""; String mname=""; String phnumber="";
+                String emppos=""; String empcip=""; String fname=""; String sname=""; adress=""; String mname=""; String phnumber="";
                 switch (t){
                     case "A":
                         while (flag_tmp){
@@ -248,10 +249,28 @@ public class GraphInterfase {
                                 flag_tmp=false;
                             }
                         }
-
-
+                        if (SqlExecute.addnewemployee(emppos,fname,sname,mname,adress,phnumber)){
+                            System.out.println("Adding success");
+                        }
+                        else {
+                            System.out.println("Adding failed");
+                        }
                         break;
                     case "R":
+                        while (flag_tmp){
+                            System.out.println("Removing employee");
+                            System.out.println("Please input employee cipher: ");
+                            empcip=scanner.next();
+                            if (empcip!=""){
+                                flag_tmp=false;
+                            }
+                        }
+                        if (SqlExecute.removeemployee(empcip)){
+                            System.out.println("Removing success");
+                        }
+                        else {
+                            System.out.println("Removing failed");
+                        }
                         break;
                     case "U":
                         break;

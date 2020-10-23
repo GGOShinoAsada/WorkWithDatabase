@@ -485,14 +485,12 @@ public class SqlExecute {
     public  static boolean addnewemployee(String empposition, String fname, String sname, String mname, String adress, String pnumber){
         boolean rez=true;
         String empciper="";
-
         int id_t=-1;
-        int count_reg=0;
+        int count_reg=1;
         try{
             connection=DriverManager.getConnection(connectionString, userName, password);
             query="select id from positions where position=?";
             dynamicStatement.setString(1,empposition);
-
             if (dynamicStatement.executeUpdate(query)>0){
                 result=dynamicStatement.executeQuery(query);
                 while (!result.next()){
@@ -506,26 +504,78 @@ public class SqlExecute {
                    count_reg=result.getInt(1);
                 }
                dynamicStatement.close();
-                result.close();
-                if (count_reg>0){
-                    query="insert into employees (employeecipher, position , firstname, secondname, middlename, adress) values ()"
-                }
-                else {
+                //result.close();
 
-                }
-                query="select concat(curdate(),'/',(select count (*)+1 from employees where position=? and substring_index(cipher,'/',-1)=curdate()) ))"
+                    query="insert into employees (employeecipher, position , firstname, secondname, middlename, adress, phonenumber) values ((select concat(curdate(),'/',?,'/',?)),?,?,?,?,?,?)";
+                    dynamicStatement.setInt(1,id_t);
+                    dynamicStatement.setInt(2,count_reg);
+                    dynamicStatement.setInt(3,id_t);
+                    dynamicStatement.setString(4,fname);
+                    dynamicStatement.setString(5,sname);
+                    dynamicStatement.setString(6,mname);
+                    dynamicStatement.setString(7,adress);
+                    dynamicStatement.setString(8,pnumber);
+                    if (!(dynamicStatement.executeUpdate()>0)){
+                        rez=false;
+                    }
+
+
+
+
+               // query="select concat(curdate(),'/',(select count (*)+1 from employees where position=? and substring_index(cipher,'/',-1)=curdate()) ))"
             }
             else {
                 System.out.println("Position not found. Please try again");
             }
-            result.close();
+            //result.close();
+
+        }
+        catch (SQLException ex){
+            try{
+                result.close();
+                dynamicStatement.close();
+                connection.close();
+            }
+            catch (SQLException ex1){
+                System.out.println(ex1.getMessage());
+            }
+        }
+        return rez;
+    }
+    public static boolean removeemployee(String empcip){
+        boolean rez=true;
+        int id_t=-1;
+        try{
+            connection=DriverManager.getConnection(connectionString,userName,password);
+            query="select id from employees where empcipher=%s";
+            query=String.format(query,empcip);
+            staticStatement=connection.createStatement();
+            result=staticStatement.executeQuery(query);
+            while (!result.next()){
+                id_t=result.getInt(1);
+            }
+
 
             if (id_t>0){
-                query="insert into employees (emp)"
+                query="update employees set status=false where id=%n";
+                query=String.format(query,id_t);
+                rez=(staticStatement.executeUpdate(query)>0)?true:false;
+            }
+            else {
+                System.out.println("Employee not found. Please check input values");
+                rez=false;
             }
         }
         catch (SQLException ex){
-
+            rez=false;
+            try{
+                result.close();
+                staticStatement.close();
+                connection.close();
+            }
+            catch (SQLException ex1){
+                System.out.println(ex1.getMessage());
+            }
         }
         return rez;
     }
